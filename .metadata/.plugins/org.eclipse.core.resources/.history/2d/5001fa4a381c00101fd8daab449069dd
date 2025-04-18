@@ -37,7 +37,7 @@ public class App {
       //  transaction.commit();
        // session.close();
         
-        String qry="FROM Employee E WHERE E.name.fname= :firstName";
+        String qry="FROM EMPLOYEE E WHERE E.name.fname= : firstName";
         Query query=session.createQuery(qry);
         query.setParameter("firstName","Raju");
         Employee employe =(Employee) query.uniqueResult();

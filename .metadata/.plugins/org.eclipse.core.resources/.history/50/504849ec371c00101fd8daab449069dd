@@ -37,22 +37,11 @@ public class App {
       //  transaction.commit();
        // session.close();
         
-        String qry="FROM Employee E WHERE E.name.fname= :firstName";
+        String qry="FROM EMPLOYEE E WHERE E.name.fname= : firstName";
         Query query=session.createQuery(qry);
         query.setParameter("firstName","Raju");
         Employee employe =(Employee) query.uniqueResult();
-        if (employe != null) {
-			Names name1=employe.getName();
-			name1.setMname("doBalwala");
-			name1.setLname("DholakPur");
-			employe.setName(name1);
-			employe.setSalary(40000.00);
-		}else {
-			System.out.println("please Enter correct employee name : ...");
-		}
-        
-        transaction.commit();
-        session.close();
+        session.get
         
     }
 }
