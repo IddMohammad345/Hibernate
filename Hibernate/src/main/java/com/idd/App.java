@@ -8,6 +8,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
 import com.idd.Entity.Employee;
+import com.idd.Entity.Names;
 
 /**
  * Hello world!
@@ -16,7 +17,12 @@ import com.idd.Entity.Employee;
 public class App {
     public static void main( String[] args ){
         Employee emp=new Employee();
-        emp.setName("raju");
+        Names name=new Names();
+        name.setFname("Raju");
+        name.setMname("Takle");
+        name.setLname("Dholakpuriya");
+        
+        emp.setName(name);
         emp.setSalary(50000.00);
         
         Configuration con=new Configuration().configure().addAnnotatedClass(Employee.class);
