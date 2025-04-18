@@ -1,5 +1,6 @@
 package com.idd.Entity;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,20 +12,22 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String name;
+	@Embedded
+	private Names name;
 	private Double salary;
+	public Names getName() {
+		return name;
+	}
+	public void setName(Names name) {
+		this.name = name;
+	}
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
 	public Double getSalary() {
 		return salary;
 	}
