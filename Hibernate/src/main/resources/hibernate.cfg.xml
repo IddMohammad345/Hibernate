@@ -12,5 +12,7 @@
         
         <property name="hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
+        
+        <mapping class="com.idd.Entity.Department"/>
     </session-factory>
 </hibernate-configuration>

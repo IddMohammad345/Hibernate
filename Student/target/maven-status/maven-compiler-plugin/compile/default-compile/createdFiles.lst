@@ -1,0 +1,3 @@
+com\Student\entity\Student.class
+com\Student\App.class
+com\Student\Util\SingleTonSessonFactory.class
