@@ -3,6 +3,8 @@ package com.Student.Util;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.Student.entity.Certificate;
+
 public class SingleTonSessonFactory {
 	
 	private static  SessionFactory instance;

@@ -14,9 +14,12 @@
         <!-- Hibernate Properties -->
         <property name="hbm2ddl.auto">update</property>
         <property name="show-sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="use_sql_comments">true</property>
         
         
         <!-- Mapping -->
         <mapping class="com.Student.entity.Student"/>
+        <mapping class="com.Student.entity.Certificate"/>
     </session-factory>
 </hibernate-configuration>
