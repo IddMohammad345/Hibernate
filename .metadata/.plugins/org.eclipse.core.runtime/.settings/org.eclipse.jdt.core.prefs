@@ -4,3 +4,4 @@ org.eclipse.jdt.core.compiler.codegen.targetPlatform=22
 org.eclipse.jdt.core.compiler.compliance=22
 org.eclipse.jdt.core.compiler.release=enabled
 org.eclipse.jdt.core.compiler.source=22
+org.eclipse.jdt.core.timeoutForParameterNameFromAttachedJavadoc=50
