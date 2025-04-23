@@ -1,8 +1,11 @@
 package com.Student;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import com.Student.Util.SingleTonSessonFactory;
 import com.Student.entity.Student;
@@ -71,6 +74,29 @@ public class StudentService {
 			beginTransaction.commit();
 		}
 		
+	}
+	
+	//HQL(JPA)->native query
+	//database independent
+	
+	//get all student using HQL
+	public List<Student>getAllStudent(){
+		try(Session session=factory.openSession()){
+			String setHQL="FROM Student";
+			Query<Student> query = session.createQuery(setHQL,Student.class);
+			return query.list();
+		}
+	}
+	
+	
+	//get student By name
+	public Student getStudentByName(String name) {
+		try(Session session=factory.openSession()){
+			String getByName="FROM Student WHERE name = :studentName";
+			Query<Student> query = session.createQuery(getByName,Student.class);
+			query.setParameter("studentName", name);
+			return query.uniqueResult();
+		}
 	}
 
 }
