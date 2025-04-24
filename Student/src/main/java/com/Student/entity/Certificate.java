@@ -18,9 +18,57 @@ public class Certificate {
 	
 	private String about;
 	
+	public Long getCertificateId() {
+		return certificateId;
+	}
+
+	public void setCertificateId(Long certificateId) {
+		this.certificateId = certificateId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getAbout() {
+		return about;
+	}
+
+	public void setAbout(String about) {
+		this.about = about;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
 	private String link;
 	
 	@ManyToOne
 	@JoinColumn(name = "student_id")
 	private Student student;
+
+	@Override
+	public String toString() {
+		return "Certificate [certificateId=" + certificateId + ", title=" + title + ", about=" + about + ", link="
+				+ link + ", student=" + student + "]";
+	}
+	
+	
 }

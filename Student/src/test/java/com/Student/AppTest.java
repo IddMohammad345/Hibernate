@@ -1,38 +1,18 @@
 package com.Student;
 
-import junit.framework.Test;
+import com.Student.entity.Student;
+
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+public class AppTest  extends TestCase{
+	
+	StudentService service=new StudentService();
+	
+	public void getStudentTest() {
+		Student byId = service.getById(1052);
+		String s_name = byId.getS_name();
+		System.out.println(s_name);
+	}
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
 }

@@ -24,6 +24,14 @@ public class Student {
 	@Column(name = "Student_college",length = 200,nullable = true)
 	private String s_college;
 	private String s_phone;
+	
+	public List<Certificate> getCertificates() {
+		return certificates;
+	}
+	public void setCertificates(List<Certificate> certificates) {
+		this.certificates = certificates;
+	}
+	
 	private String s_fathername;
 	private boolean s_active;
 	@Lob
@@ -73,6 +81,12 @@ public class Student {
 	}
 	public void setAbout(String about) {
 		this.about = about;
+	}
+	@Override
+	public String toString() {
+		return "Student [s_id=" + s_id + ", s_name=" + s_name + ", s_college=" + s_college + ", s_phone=" + s_phone
+				+ ", s_fathername=" + s_fathername + ", s_active=" + s_active + ", about=" + about + ", certificates="
+				+ certificates + "]";
 	}
 	
 	
